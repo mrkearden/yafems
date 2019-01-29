@@ -1,0 +1,40 @@
+CHANGELOG FOR YAFEMS
+
+v0.4
+---------------------------------------
+- More performance boost due to the implementation of the Cuthill-McKee
+algorithm. This algorithm reorders the stiffness matrix matrix and severely
+reduces the bandwith. This leads to a huge decrease in time on the solving
+stage. If the number of elements is not too big, the solving time can actually
+increase a little, but those are the cases that solves in under a second, it
+shouldn't be a problem. The piston case sees a reduction in solving time from
+almost a minute to 9 seconds.
+- Fixed some minor typos here and there.
+- I've been trying to implement parallellization using OpenMP, but it seems that
+in the loops I've tried it actually takes more time to create the threads,
+execute them and then syncing then than the time it takes to do it with a
+single thread. This has lead to postpone parallellization for now. Some
+commented out code has been left in case I decide to give it a try in the future.
+- Windows version released between 0.3 and 0.4.
+
+v0.3
+---------------------------------------
+- Big performance increase due to internal changes. The stiffness matrix is stored
+using the "skyline" method detailed in Finite Element Procedures by Bathe. This
+allows great savings in memory and solving time. A new solving algorithm that takes
+advantage of this matrix description is used.
+- YAFEMS now outputs to standard output the time it takes for several tasks and the
+total computed time.
+
+v0.2
+---------------------------------------
+- Implemented 3D solving using linear tetrahedrons. Although the results are not very
+accurate due to this elements, YAFEMS can now solve a 3D case.
+- New tutorials for the 3D module added to user manual.
+- Typo fixing.
+
+v0.1
+----------------------------------------
+- First version of YAFEMS. Capable of performing a 2D plane stress-plane strain analysis
+using linear triangles.
+

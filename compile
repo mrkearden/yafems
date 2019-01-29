@@ -1,0 +1,5 @@
+gfortran -O2 -o ./src/yafems_2d ./src/rcm.f90 ./src/yafems_2d.f90 -I/usr/include -L/usr/local/lib -lmed
+# gfortran -O2 -o ./src/yafems_2d ./src/rcm.f90 ./src/yafems_2d.f90 -I/usr/include -L/usr/local/lib -lmed -fopenmp
+gfortran -O2 -o ./src/yafems_3d ./src/rcm.f90 ./src/yafems_3d.f90 -I/usr/include -L/usr/local/lib -lmed
+# gfortran -O2 -o ./src/yafems_3d ./src/rcm.f90 ./src/yafems_3d.f90 -I/usr/include -L/usr/local/lib -lmed -fopenmp
+rm ./rcm.mod

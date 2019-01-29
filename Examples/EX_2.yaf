@@ -1,0 +1,25 @@
+EX_2.med
+1 1 1 2 1
+0.5 200000000000 0.3
+Plate
+1
+Sim_vert
+1 0
+Sim_hor
+0 1
+Load
+10000 0 1
+END
+# Line: 'mesh.med'
+# Line (5 integers total): 'type of analysis 1=Plane stress, 2=Plain strain' 'Number of different materials' 'Number of groups in compound' 'Number of boundary conditions' 'Number of loads'
+# One line per material (3 real values): 'Thickness of 2D element' 'E' 'Poisson'
+# Line for material group: 'Group_name1'
+# Line: Material assigned to 'Group_name1'
+# Line for boundary conditions: 'Group_name2'
+# Line: Boundary conditions in global x and y assigned to 'Group_name2' 1=Fixed 0=Free
+# Repeat for every boudary condition
+# Line: Groups where load is applied: can be line or node group 'Group_name'
+# Line: Load value in Force units if applied in node gropup or Force/surface units if applied in line group in global x and y assigned to 'Group_name'. Third value is the number of material of the element node in which the load is applied, as a node can be shared between elements. THIS VALUE IS ONLY NEEDED IN DISTRIBUTED LOADS. Putting it in a punctual load doesn't affect the model.
+# Repeat for every load
+# END
+
